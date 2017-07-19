@@ -1,0 +1,88 @@
+<ion-view view-title="<img class='icomenu' src='assets/img/icon.png'>Pesquisar Convênios">
+    <ion-content ng-controller="pesquisaconvenioCtrl">
+      <p class="title">Pesquise o Convênio desejado</p>
+      <p class="subtitle">pela sua área de atuação e cidade.</p>
+
+      <form class="form-feijor row">
+          <select class="col space-row" ng-change="selecAre()" ng-model="inputPsConv.area" ng-options="area.descricao for area in areas">
+            <option selected disabled value="">Selecione a área</option>
+          </select>
+          <select class="col space-row" ng-change="atualizaPesquisa()" ng-model="inputPsConv.cidade" ng-options="cidade.nome_cidade for cidade in cidades">
+            <option selected disabled value="">Selecione a cidade</option>
+          </select>
+      </form><br/>
+
+      <div class="row-abepom" ng-init="liberatabela = false" ng-show="liberatabela">
+        <div class="row-cabecalho">
+          <p>{{inputPsConv.area.descricao}} | {{inputPsConv.cidade.nome_cidade}}</p>
+        </div>
+        <div class="row row-subcabecalho" ng-show="convenios.length > 0 || parceiros.length > 0 || profissionais.length > 0 || credenciados.length > 0">
+          <div class="col col-50">
+              <p>Nome</p>
+          </div>
+          <div class="col col-25 col-cente">
+              <p>Bairro</p>
+          </div>
+          <div class="col col-25 col-cente">
+              <p>Detalhes</p>
+            </div>
+        </div>
+        <p class="txt txt-no-row" ng-show="!(convenios.length > 0) && !(parceiros.length > 0) && !(profissionais.length > 0) && !(credenciados.length > 0)">Nenhum registro nessa tabela</p>
+
+        <div class="row-cabecalho-divider" ng-show="convenios.length > 0">
+          <p>Convênios</p>
+        </div>
+        <div class="row row-body" ng-repeat="conveio in convenios">
+          <div class="col col-50"><p>{{conveio.nome}}</p></div><div class="col col-25 col-cente"><p>{{conveio.bairro}}</p></div>
+          <div class="col col-25 with-icon" ng-click="sendLocation('/app/verconvenio/{{conveio.codigo}}/1')">
+            <p><i class="icon icon-abepm">q</i></p>
+          </div>
+        </div>
+
+        <div class="row-cabecalho-divider" ng-show="parceiros.length > 0">
+          <p>Parceiros</p>
+        </div>
+        <div class="row row-body" ng-repeat="parceiro in parceiros">
+          <div class="col col-50"><p>{{parceiro.nome}}</p></div><div class="col col-25 col-cente"><p>{{parceiro.bairro}}</p></div>
+          <div class="col col-25 with-icon" ng-click="sendLocation('/app/verconvenio/{{parceiro.codigo}}/2')">
+            <p><i class="icon icon-abepm">q</i></p>
+          </div>
+        </div>
+
+        <div class="row-cabecalho-divider" ng-show="profissionais.length > 0">
+          <p>Profissionais</p>
+        </div>
+        <div class="row row-body" ng-repeat="profissional in profissionais">
+          <div class="col col-50"><p>{{profissional.nome}}</p></div><div class="col col-25 col-cente"><p>{{profissional.bairro}}</p></div>
+          <div class="col col-25 with-icon" ng-click="sendLocation('/app/verconvenio/{{profissional.codigo}}/3')">
+            <p><i class="icon icon-abepm">q</i></p>
+          </div>
+        </div>
+
+        <div class="row-cabecalho-divider" ng-show="credenciados.length > 0">
+          <p>Credenciados</p>
+        </div>
+        <div class="row row-body" ng-repeat="credenciado in credenciados">
+          <div class="col col-50"><p>{{credenciado.nome}}</p></div><div class="col col-25 col-cente"><p>{{credenciado.bairro}}</p></div>
+          <div class="col col-25 with-icon" ng-click="sendLocation('/app/verconvenio/{{credenciado.codigo}}/4')">
+            <p><i class="icon icon-abepm">q</i></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <button ng-click="sendLocation('/app/sugerirconvenios')" class="button button-feijor button-inside-app button-red button-row"><i class="icon-abepm">k</i>Sugerir convênios</button>
+        </div>
+        <div class="col">
+          <button ng-click="sendLocation('/app/convenioprox')" class="button button-feijor button-inside-app button-red button-row"><i class="icon-abepm">b</i>Convênios próximos</button>
+        </div>
+      </div>
+
+      <p class="txt txt_add_rmv"><i class="icon-abepm" style="padding-left: 5px;padding-right: 5px;">8</i>Tipos de Convênio da ABEPOM</p>
+      <div class="textInf">
+        <p ng-bind-html="texto"></p>
+      </div>
+
+    </ion-content>
+</ion-view>

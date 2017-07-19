@@ -1,0 +1,77 @@
+<ion-side-menus>
+  <ion-side-menu-content>
+    <ion-nav-bar class="bar-blue" >
+
+			<ion-nav-back-button style="color: white !important;"></ion-nav-back-button>
+
+      <ion-nav-buttons side="left">
+        <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+      </ion-nav-buttons>
+
+      <ion-nav-buttons side="right">
+        <button class="button button-icon icon icon-abepm" ng-class="{'ifnot': contadornotificacoes}" ng-click="open_notification()">e</button>
+      </ion-nav-buttons>
+    </ion-nav-bar>
+
+    <ion-nav-view name="menuContent" class="app_home"></ion-nav-view>
+  </ion-side-menu-content>
+
+  <ion-side-menu side="left" class="side-menu" style="background-color: #f8f8f8;">
+    <ion-header-bar class="bar-stable hearder-menu-user">
+			<h1 class="title">Menu</h1>
+    </ion-header-bar>
+    <ion-content>
+      <ion-list>
+        <ion-item menu-close class="item-icon-left item-icon-right" href="#/app/home">
+          <i class="icon icon-abepm">o</i>Minha ABEPOM<i class="icon ion-chevron-right"></i>
+        </ion-item>
+        <ion-item menu-close class="item-icon-left item-icon-right" href="#/app/convenioprox">
+          <i class="icon icon-abepm">b</i>Convênios por Localização<i class="icon ion-chevron-right"></i>
+        </ion-item>
+        <ion-item menu-close class="item-icon-left item-icon-right" href="#/app/pesquisarconvenios"  ng-show="usperfil == 'titular'">
+          <i class="icon icon-abepm">6</i>Convênios por Área de atuação<i class="icon ion-chevron-right"></i>
+        </ion-item>
+        <ion-item menu-close class="item-icon-left item-icon-right" href="#/app/avaliconv" ng-show="usperfil == 'titular'">
+          <i class="icon icon-abepm">l</i>Avaliação de Convênios<i class="icon ion-chevron-right"></i>
+        </ion-item>
+        <ion-item menu-close class="item-icon-left item-icon-right" href="#/app/cdescontos" ng-show="usperfil != 'titular'">
+          <i class="icon icon-abepm">s</i>Minhas Despesas<i class="icon ion-chevron-right"></i>
+        </ion-item>
+        <ion-item menu-close class="item-icon-left item-icon-right" href="#/app/conssultconvenio" ng-show="usperfil != 'titular'">
+          <i class="icon icon-abepm">p</i>Convênios e permissões de Uso<i class="icon ion-chevron-right"></i>
+        </ion-item>
+        <ion-item menu-close class="item-icon-left item-icon-right" href="#/app/card" ng-show="usperfil != 'titular'">
+          <i class="icon icon-abepm">4</i>Cartão ABEPOM<i class="icon ion-chevron-right"></i>
+        </ion-item>
+
+        <ion-item class="item-icon-left toggleMenu item-icon-right" ng-click="toggleMenu(0)" ng-show="usperfil == 'titular'">
+					<i class="icon icon-abepm">k</i>Sugestão de Convênios<i class="icon {{Axicon0}}"></i>
+        </ion-item>
+
+        <div ng-show="usperfil == 'titular'">
+					<ion-item menu-close href="#/app/sugerirconvenios" class="item-accordion item-content item ng-binding" ng-show="isShownToggle(0)">Sugerir Convênio</ion-item>
+					<ion-item menu-close href="#/app/convsuge" class="item-accordion item-content item ng-binding" ng-show="isShownToggle(0)">Convênios Sugeridos</ion-item>
+        </div>
+
+        <ion-item class="item-icon-left toggleMenu item-icon-right" ng-click="toggleMenu(1)" ng-show="usperfil == 'titular' && solicitar_auxilio == 1">
+					<i class="icon icon-abepm">1</i>Solicitação de Auxilio<i class="icon {{Axicon1}}"></i>
+        </ion-item>
+
+        <div ng-show="usperfil == 'titular' && solicitar_auxilio == 1">
+					<ion-item menu-close href="#/app/soliaux" class="item-accordion item-content item ng-binding" ng-show="isShownToggle(1)">Solicitar Auxílio</ion-item>
+					<ion-item menu-close href="#/app/auxsolic" class="item-accordion item-content item ng-binding" ng-show="isShownToggle(1)">Auxílio Solicitado</ion-item>
+        </div>
+
+        <ion-item menu-close class="item-icon-left item-icon-right" href="#/app/historiconotificacao">
+          <i class="icon icon-abepm">e</i>Notificações<i class="icon ion-chevron-right"></i>
+        </ion-item>
+        <ion-item menu-close class="item-icon-left item-icon-right" href="#/app/configuracoes">
+          <i class="icon icon-abepm">g</i>Configurações<i class="icon ion-chevron-right"></i>
+        </ion-item>
+        <ion-item menu-close class="item-icon-left" href="#/enter/login"  ng-click="logoff()">
+          <i class="icon icon-abepm">0</i>Sair
+        </ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-side-menu>
+</ion-side-menus>

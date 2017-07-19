@@ -1,0 +1,61 @@
+<ion-view view-title="<img class='icomenu' src='assets/img/icon.png'>Detalhes Emprestimo/Auxílio">
+  <ion-content>
+
+    <div class="row-abepom" ng-show="tipo == 'emprestimo'">
+        <div class="row row-subcabecalho">
+          <div class="col with-line"><p>Nome financeira: <a>{{emprestimo.nome_financeira}}</a></p></div>
+        </div>
+        <div class="row row-subcabecalho">
+          <div class="col with-line"><p>Mes/Ano Inicio: <a>{{emprestimo.mesano_primeiro_desconto}}</a></p></div>
+        </div>
+        <div class="row row-subcabecalho">
+          <div class="col with-line"><p>Mes/Ano Desconto: <a>{{emprestimo.mesano_desconto}}</a></p></div>
+        </div>
+        <div class="row row-subcabecalho">
+          <div class="col with-line"><p>Valor parcela: <a>{{emprestimo.valor_parcela}}</a></p></div>
+        </div>
+        <div class="row row-subcabecalho">
+          <div class="col with-line"><p>Qtd. Parcelas: <a>{{emprestimo.total_do_parcelamento}}</a></p></div>
+        </div>
+        <div class="row row-subcabecalho">
+          <div class="col with-line"><p>Valor total: <a>R${{emprestimo.valor_total | number: 2}}</a></p></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row-abepom" ng-show="tipo == 'auxilio'">
+        <div class="row row-subcabecalho">
+          <div class="col with-line"><p>Matricula: <a>{{auxilio.matricula}}</a></p></div>
+        </div>
+        <div class="row row-subcabecalho">
+          <div class="col with-line"><p>Cód. Controle: <a>{{auxilio.codigo_controle}}</a></p></div>
+        </div>
+        <div class="row row-subcabecalho">
+          <div class="col with-line"><p>Tipo de auxílios: <a>{{auxilio.tipo_de_auxilio}}</a></p></div>
+        </div>
+        <div class="row row-subcabecalho">
+          <div class="col with-line"><p>Nome: <a>{{auxilio.nome_titular}}</a></p></div>
+        </div>
+        <div class="row row-subcabecalho">
+          <div class="col with-line"><p>Dt. recebimento: <a>{{auxilio.data_recebimento}}</a></p></div>
+        </div>
+        <div class="row row-subcabecalho">
+          <div class="col with-line"><p>1º Desc.: <a>{{auxilio.mesano_primeiro_desconto}}</a></p></div>
+        </div>
+        <div class="row row-subcabecalho">
+          <div class="col with-line"><p>Parcela atual: <a>{{auxilio.parcela_atual}}</a></p></div>
+        </div>
+        <div class="row row-subcabecalho">
+          <div class="col with-line"><p>Qtd. Parcelas: <a>{{auxilio.quantidade_parcelas}}</a></p></div>
+        </div>
+        <div class="row row-subcabecalho">
+          <div class="col with-line"><p>Valor parcela: <a>R${{auxilio.valor_parcela | number: 2}}</a></p></div>
+        </div>
+        <div class="row row-subcabecalho">
+          <div class="col with-line"><p>Obs.: <a>{{auxilio.observacao}}</a></p></div>
+        </div>
+      </div>
+    </div>
+
+  </ion-content>
+</ion-view>

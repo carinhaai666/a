@@ -1,0 +1,34 @@
+<ion-view view-title="<img class='icomenu' src='assets/img/icon.png'>Avaliar Convênios">
+  <ion-content class="avaliaconv">
+
+    <p ng-show="index >= avaliacao.length" class="title">{{return}}</p>
+
+    <div ng-show="index < avaliacao.length">
+
+      <br>
+      <br>
+
+      <p class="name">{{avaliacao[index].nome_convenio}}</p>
+
+      <br>
+
+      <rating ng-model="inptavalia.rating" max="inptavalia.max" ></rating>
+
+      <br>
+
+      <div class="list">
+        <label class="item item-input item-stacked-label">
+          <span class="input-label">Comentário</span>
+          <textarea ng-model="inptavalia.descricao" style="height: 100px;" placeholder="Deixe aqui seu comentário sobre o convênio."></textarea>
+        </label>
+      </div>
+
+      <br>
+      <br>
+
+      <p class="title" ng-click="pular()" ng-show="index < avaliacao.length"><a>PULAR</a></p><br>
+      <button class="button button-feijor button-inside-app button-green" ng-click="avaliarConv()">AVALIAR</button>
+    </div>
+
+  </ion-content>
+</ion-view>

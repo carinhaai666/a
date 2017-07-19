@@ -1,0 +1,12 @@
+@font-face {
+    font-family: 'abepomregular';
+    src: url('webfont-abepom-webfont.woff2') format('woff2'),
+         url('webfont-abepom-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.icon-abepm{
+  font-family: 'abepomregular';
+  font-size: 22px;
+}

@@ -1,0 +1,85 @@
+<ion-view view-title="<img class='icomenu' src='assets/img/icon.png'>Descontos Futuros">
+  <ion-content class="descFuturo">
+
+    <p class="title">Confira os descontos para o proximo mês.</p>
+
+    <div class="row-abepom">
+      <div class="row row-cabecalho">
+        <p>{{titulo}}</p>
+      </div>
+      <div class="row row-subcabecalho" ng-show="convenios.length > 0 || hospital.length > 0 || juridico.length > 0 || hotel.length > 0">
+        <!--<div class="col col-15"><p>Data</p></div>-->
+        <div class="col" style="min-width: 60%;"><p>Descrição</p></div>
+        <div class="col col-20 valor"><p>Valor</p></div>
+        <div class="col col-20"><p>Detalhes</p></div>
+      </div>
+      <p class="txt txt-no-row" ng-show="!(convenios.length > 0) && !(hospital.length > 0) && !(juridico.length > 0) && !(hotel.length > 0)">Nenhum registro nessa tabela</p>
+
+      <!--
+        <div class="row-cabecalho-divider" ng-show="convenios.length > 0">
+          <p>Convênios</p>
+        </div>
+      -->
+        <div class="row row-body" ng-repeat="conveio in convenios">
+          <!--<div class="col col-15"><p>{{conveio.data}}</p></div>-->
+          <div class="col" style="min-width: 60%;"><p>{{conveio.nome_fantasia}}</p></div>
+          <div class="col col-20 valor"><p>R${{conveio.valor | number:2}}</p></div>
+          <div class="col col-20 with-icon" ng-click="sendLocation('/app/detalhesDoDesconto/{{conveio.codigo}}/1')">
+            <p><i class="icon icon-abepm">q</i></p>
+          </div>
+        </div>
+
+        <!--
+        <div class="row-cabecalho-divider" ng-show="parceiros.length > 0">
+          <p>Parceiros</p>
+        </div>
+      -->
+        <div class="row row-body" ng-repeat="parceiro in hospital">
+          <!--<div class="col col-15"><p>{{parceiro.data}}</p></div>-->
+          <div class="col col-70" style="min-width: 60%;"><p>{{parceiro.nome_fantasia}}</p></div>
+          <div class="col col-15 valor"><p>R${{parceiro.valor | number:2}}</p></div>
+          <div class="col col-15 with-icon" ng-click="sendLocation('/app/detalhesDoDesconto/{{parceiro.codigo}}/2')">
+            <p><i class="icon icon-abepm">q</i></p>
+          </div>
+        </div>
+
+        <!--
+        <div class="row-cabecalho-divider" ng-show="profissionais.length > 0">
+          <p>Profissionais</p>
+        </div>
+      -->
+        <div class="row row-body" ng-repeat="profissional in juridico">
+          <!--<div class="col col-15"><p>{{profissional.data}}</p></div>-->
+          <div class="col col-70" style="min-width: 60%;"><p>{{profissional.nome_fantasia}}</p></div>
+          <div class="col col-15 valor"><p>R${{profissional.valor | number:2}}</p></div>
+          <div class="col col-15 with-icon" ng-click="sendLocation('/app/detalhesDoDesconto/{{profissional.codigo}}/3')">
+            <p><i class="icon icon-abepm">q</i></p>
+          </div>
+        </div>
+
+        <!--
+        <div class="row-cabecalho-divider" ng-show="credenciados.length > 0">
+          <p>Credenciados</p>
+        </div>
+        -->
+        <div class="row row-body" ng-repeat="credenciado in hotel">
+          <!--<div class="col col-15"><p>{{credenciado.data}}</p></div>-->
+          <div class="col col-70" style="min-width: 60%;"><p>{{credenciado.nome_fantasia}}</p></div>
+          <div class="col col-15 valor"><p>R${{credenciado.valor | number:2}}</p></div>
+          <div class="col col-15 with-icon" ng-click="sendLocation('/app/detalhesDoDesconto/{{credenciado.codigo}}/4')">
+            <p><i class="icon icon-abepm">q</i></p>
+          </div>
+        </div>
+        <div class="row row-footer">
+          <p>Total de descontos: R${{valortotal | number: 2}}</p>
+        </div>
+      </div>
+    </div>
+
+    <p class="txt txt_add_rmv"><i class="icon-abepm">8</i>O que são os descontos futuros?</p>
+    <div class="textInf">
+      <p ng-bind-html="texto"></p>
+    </div>
+
+  </ion-content>
+</ion-view>

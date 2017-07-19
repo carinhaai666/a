@@ -1,0 +1,76 @@
+<ion-view view-title="<img class='icomenu' src='assets/img/icon.png'>Configurações">
+  <ion-content class="config" ng-controller="configCtrl">
+
+    <br>
+    <br>
+    <br>
+    <div style="text-align: center;">
+      <img class="imgUser" ng-src="{{usimg}}" style="width: 150px;height: 150px;" ng-click="atualizaPhoto()">
+      <p>Clique para mudar sua foto de perfil</p>
+    </div>
+
+    <p class="title">Minhas informações</p>
+    <form class="list" name="formChangeUser">
+      <label class="item item-input item-stacked-label">
+        <span class="input-label">Email</span>
+        <input type="email" ng-model="inpChangeUser.email" required>
+      </label>
+     <label class="item item-input item-stacked-label">
+       <span class="input-label">Endereço</span>
+       <input type="text" ng-model="inpChangeUser.endereco" required>
+     </label>
+     <label class="item item-input item-stacked-label">
+       <span class="input-label">Número</span>
+       <input type="text" ng-model="inpChangeUser.numero" required>
+     </label>
+     <label class="item item-input item-stacked-label">
+       <span class="input-label">Complemento</span>
+       <input type="text" ng-model="inpChangeUser.complemento" required>
+     </label>
+     <label class="item item-input item-select">
+       <span class="input-label" style="padding-left: 15px;">Cidade</span>
+       <select ng-model="inpChangeUser.codigo_cidade">
+         <option value="{{cidade.codigo_cidade}}" ng-repeat="cidade in cidades" ng-selected="selectedItem == cidade.codigo_cidade">{{cidade.nome_cidade}}</option>
+       </select>
+     </label>
+     <label class="item item-input item-stacked-label">
+       <span class="input-label">CEP</span>
+       <input type="text" ng-model="inpChangeUser.cep"  autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" ui-br-cep-mask required>
+     </label>
+     <label class="item item-input item-stacked-label">
+       <span class="input-label">Telefone residencial</span>
+       <input type="tel" ng-model="inpChangeUser.telefone_residencial" ui-br-phone-number autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" required>
+     </label>
+     <label class="item item-input item-stacked-label">
+       <span class="input-label">Telefone celular</span>
+       <input type="tel" ng-model="inpChangeUser.telefone_celular" ui-br-phone-number autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" required>
+     </label>
+     <label class="item item-input item-stacked-label">
+       <span class="input-label">Telefone Comercial</span>
+       <input type="tel" ng-model="inpChangeUser.telefone_comercial" ui-br-phone-number autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" required>
+     </label>
+   </form>
+
+    <button class="button button-feijor button-inside-app button-blue" ng-click="atualizaDados()">Atualizar dados</button>
+
+    <br>
+    <br>
+
+    <form name="formChangePass" class="list">
+      <label class="item item-input item-stacked-label">
+        <span class="input-label">Senha atual</span>
+        <input type="password" ng-model="inpChangePass.senha_atual" required>
+      </label>
+      <label class="item item-input item-stacked-label">
+        <span class="input-label">Nova senha</span>
+        <input type="password" ng-model="inpChangePass.nova_senha" required>
+      </label>
+      <label class="item item-input item-stacked-label">
+        <span class="input-label">Confirmar nova senha</span>
+        <input type="password" ng-model="inpChangePass.confirmar_nova_senha" required>
+      </label>
+    </form>
+
+    <button class="button button-feijor button-inside-app button-blue" ng-click="atulizaSeha()">Atualizar senha</button>
+  </ion-content>
+</ion-view>

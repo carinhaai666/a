@@ -1,0 +1,44 @@
+<ion-view view-title="<img class='icomenu' src='assets/img/icon.png'>Liberar Convênio">
+  <ion-content class="liberaconveniodependente" ng-controller="liberardependenteCtrl">
+
+    <br>
+    <br>
+    <div style="text-align: center;">
+      <img class="imgUser" src="{{convenios.caminho_imagem}}">
+      <p class="title" style="margin: 0px 0px 0px 0px !important;">{{convenios.nome}}</p>
+    </div>
+
+    <div class="row row-cabecalho">
+      <div class="col col-60">APLICAR A TODOS</div>
+      <div class="col">PERMITIR</div>
+      <div class="col">NEGAR</div>
+    </div>
+
+    <div class="row row-body">
+      <div class="col col-60" ng-init="allaplic.chkP = true;allaplic.chkN = true;"></div>
+      <div class="col"><ion-checkbox ng-model="allaplic.chkP" ng-change="mudaAll(true)" class="permitir"></ion-checkbox></div>
+      <div class="col"><ion-checkbox ng-model="allaplic.chkN" ng-change="mudaAll(false)" class="negar"></ion-checkbox></div>
+    </div>
+
+    <div class="row row-cabecalho">
+      <div class="col col-60">ÁREA DE ATUAÇÃO</div>
+      <div class="col">PERMITIR</div>
+      <div class="col">NEGAR</div>
+    </div>
+    <div class="row row-body" ng-repeat="convenio in convenios.areas">
+      <div class="col col-60" ng-init="inpAtu[$index].chkP = (convenio.permitido == 1 ? true : false);inpAtu[$index].chkN = (convenio.negado == 1 ? true : false);convenio.obj = inpAtu[$index]">{{convenio.descricao_area}}</div>
+      <div class="col"><ion-checkbox ng-model="inpAtu[$index].chkP" ng-change="inpAtu[$index].chkN = !inpAtu[$index].chkP; convenio.permitido = (inpAtu[$index].chkP == true ? 1 : 0); convenio.negado = (inpAtu[$index].chkN == true ? 1 : 0);" class="permitir"></ion-checkbox></div>
+      <div class="col"><ion-checkbox ng-model="inpAtu[$index].chkN" ng-change="inpAtu[$index].chkP = !inpAtu[$index].chkN; convenio.permitido = (inpAtu[$index].chkP == true ? 1 : 0); convenio.negado = (inpAtu[$index].chkN == true ? 1 : 0);" class="negar"></ion-checkbox></div>
+    </div>
+    <div class="row row-footer">
+      <div class="col col-60"></div>
+      <div class="col"></div>
+      <div class="col"></div>
+    </div>
+
+
+    <button  ng-click="confmLibConv(inpAtu)" class="button button-feijor button-blue button-inside-app">SALVAR</button>
+
+
+  </ion-content>
+</ion-view>

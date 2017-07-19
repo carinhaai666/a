@@ -1,0 +1,25 @@
+<ion-view view-title="">
+  <ion-content class="forgot" ng-controller="forgotCtrl">
+
+    <a style="font-size: 38px;color: white;position: absolute;margin: 5px;margin-top: 5px;" ng-click="goBack()"><i class="icon ion-ios-arrow-thin-left"></i></a>
+
+    <h3><b>Esqueceu sua senha?</b></h3>
+
+    <br>
+    <br>
+
+    <form name="formForgot" novalidate ng-submit="confirmaForgot(formForgot)">
+      <div class="input">
+        <input type="tel" ng-model="inputForgot.cartao" placeholder="Número do cartão" maxlength="11" required>
+      </div>
+      <div class="input">
+        <input type="tel" ng-model="inputForgot.cpf" placeholder="CPF" ng-model="initializedCpf" ui-br-cpf-mask autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" required>
+      </div>
+      <div class="input">
+        <input type="email" ng-model="inputForgot.email" placeholder="E-mail" required>
+      </div>
+      <button type="submit" class="button button-feijor button-blue">Enviar</button>
+    </form>
+
+  </ion-content>
+</ion-view>

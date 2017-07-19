@@ -1,0 +1,23 @@
+<ion-view view-title="<img class='icomenu' src='assets/img/icon.png'>Descontos Futuros">
+  <ion-content class="descFuturoDtl">
+
+    <p class="title">Detalhamento do Desconto Futuro</p>
+
+    <div class="row-abepom">
+      <div class="row row-cabecalho">
+        <p>{{titulo}}</p>
+      </div>
+      <div class="row row-subcabecalho">
+        <div class="col with-line"><p>Nome: <a>{{desdtl.nome_paciente}}</a></p></div>
+      </div>
+      <div class="row row-subcabecalho">
+        <div class="col with-line"><p>Local: <a>{{desdtl.nome_fantasia}}</a></p></div>
+      </div>
+      <div class="row row-subcabecalho">
+        <div class="col with-line"><p>Data: <a>{{desdtl.data}}</a></p></div>
+        <div class="col with-line"><p>Valor: <a>R${{desdtl.valor | number:2}}</a></p></div>
+      </div>
+
+
+  </ion-content>
+</ion-view>

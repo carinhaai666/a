@@ -1,0 +1,73 @@
+<ion-view view-title="<img class='icomenu' src='assets/img/icon.png'>Detalhes Despesas Odontológicas">
+  <ion-content>
+
+    <p class="title">Detalhamento de Orçamento</p>
+
+    <div class="row-abepom">
+      <div class="row row-cabecalho">
+        <p>Orçamento</p>
+      </div>
+      <div class="row row-subcabecalho">
+        <div class="col col-20"><p>Orçamento</p></div>
+        <div class="col"><p>Paciente</p></div>
+        <div class="col col-20"><p>Data do orçamento</p></div>
+      </div>
+      <div class="row row-body">
+        <div class="col col-20"><p>{{orcamento.id_orcamento}}</p></div>
+        <div class="col"><p>{{orcamento.nome_paciente}}</p></div>
+        <div class="col col-20"><p>{{orcamento.data_orcamento}}</p></div>
+      </div>
+      <div class="row row-subcabecalho">
+        <div class="col col-50"><p>Dentista</p></div>
+        <div class="col"><p>Final do tratamento</p></div>
+      </div>
+      <div class="row row-body">
+        <div class="col col-50"><p>{{orcamento.nome_profissional}}</p></div>
+        <div class="col"><p>{{orcamento.data_final_orcamento}}</p></div>
+      </div>
+      <div class="row row-subintocabecalho">
+        <div class="col"><p style="text-align:center;">{{orcamento.situacao}}</p></div>
+      </div>
+    </div>
+
+    <div class="row-abepom">
+      <div class="row row-cabecalho">
+        <p>Parcelamento do orçamento</p>
+      </div>
+      <div class="row row-subcabecalho">
+        <div class="col col-20"><p>Matrícula</p></div>
+        <div class="col"><p>Convênio</p></div>
+        <div class="col col-20"><p>1º Desconto</p></div>
+      </div>
+      <div class="row row-body">
+        <div class="col col-20"><p>{{parcelamento.matricula}}</p></div>
+        <div class="col"><p>{{parcelamento.nome_fantasia}}</p></div>
+        <div class="col col-20"><p>{{parcelamento.mesano_primeiro_desconto}}</p></div>
+      </div>
+      <div class="row row-subcabecalho">
+        <div class="col col-25"><p>Qtd. Parcelas</p></div>
+        <div class="col col-25"><p>Valor</p></div>
+        <div class="col col-25"><p>Parcelas Pagas</p></div>
+        <div class="col col-25"><p>Nº Parcelamento</p></div>
+      </div>
+      <div class="row row-body">
+        <div class="col col-25"><p>{{parcelamento.quantidade_de_parcelas}}</p></div>
+        <div class="col col-25"><p>R${{parcelamento.valor_da_parcela | number: 2}}</p></div>
+        <div class="col col-25"><p>{{parcelamento.parcelas_pagas}}</p></div>
+        <div class="col col-25"><p>{{parcelamento.numero_parcelamento}}</p></div>
+      </div>
+      <div class="row row-subcabecalho">
+        <div class="col col-20"><p>Cód.</p></div>
+        <div class="col col-40"><p>Procedimento</p></div>
+        <div class="col col-20"><p>QTD.</p></div>
+        <div class="col col-20"><p>Total</p></div>
+      </div>
+      <div class="row row-body" ng-repeat="proced in procedimento">
+        <div class="col col-20"><p>{{proced.codigo_procedimento}}</p></div>
+        <div class="col col-40"><p>{{proced.procedimento}}</p></div>
+        <div class="col col-20"><p>{{proced.quantidade}}</p></div>
+        <div class="col col-20"><p>R${{proced.valor_total | number: 2}}</p></div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,28 @@
+<ion-view view-title="<img class='icomenu' src='assets/img/icon.png'>Convênios e Permissões de Uso">
+  <ion-content class="liberaconveniodependente">
+
+    <br>
+    <br>
+    <div style="text-align: center;">
+      <img class="imgUser" src="{{convenios.caminho_imagem}}">
+      <p class="title" style="margin: 0px 0px 0px 0px !important;">{{convenios.nome}}</p>
+    </div>
+
+    <div class="row row-cabecalho">
+      <div class="col col-60">ÁREA DE ATUAÇÃO</div>
+      <div class="col">PERMITIR</div>
+      <div class="col">NEGAR</div>
+    </div>
+    <div class="row row-body" ng-repeat="convenio in convenios.areas">
+      <div class="col col-60" ng-init="inpAtu[$index].chkP = (convenio.permitido == 1 ? true : false);inpAtu[$index].chkN = (convenio.negado == 1 ? true : false);">{{convenio.descricao_area}}</div>
+      <div class="col"><ion-checkbox ng-model="inpAtu[$index].chkP" ng-change="inpAtu[$index].chkP = !inpAtu[$index].chkP;" class="permitir"></ion-checkbox></div>
+      <div class="col"><ion-checkbox ng-model="inpAtu[$index].chkN" ng-change="inpAtu[$index].chkN = !inpAtu[$index].chkN;" class="negar"></ion-checkbox></div>
+    </div>
+    <div class="row row-footer">
+      <div class="col col-60"></div>
+      <div class="col"></div>
+      <div class="col"></div>
+    </div>
+
+  </ion-content>
+</ion-view>

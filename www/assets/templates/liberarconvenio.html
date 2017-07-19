@@ -1,0 +1,17 @@
+<ion-view view-title="<img class='icomenu' src='assets/img/icon.png'>Selecionar Dependente">
+  <ion-content class="liberaconvenio" ng-controller="liberarconvenioCtrl">
+
+    <p class="title">Escolha um dependente</p>
+
+    <form class="form-feijor">
+      <select ng-model="inptDep.cartao">
+        <option value="" disabled selected>Selecione o dependente</option>
+        <option value="{{dependente.dependente}}" ng-repeat="dependente in dependentes">{{dependente.nome_dependente}}</option>
+      </select>
+    </form>
+
+    <button ng-click="sendLocation('/app/liberardependente/'+inptDep.cartao)" ng-show="inptDep.cartao" class="button button-feijor button-blue button-inside-app">Avançar</button>
+
+
+  </ion-content>
+</ion-view>

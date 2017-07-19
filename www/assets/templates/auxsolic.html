@@ -1,0 +1,18 @@
+<ion-view view-title="<img class='icomenu' src='assets/img/icon.png'>Auxílio Solicitado">
+  <ion-content>
+
+    <div class="card card-solic" ng-repeat="sugestao in auxilios">
+      <p class="title">{{sugestao.nome_convenio}}</p>
+      <p>{{sugestao.telefone_convenio}}</p>
+      <p>{{sugestao.endereco_convenio}} {{sugestao.nome_cidade}}</p>
+      <p>{{sugestao.quantidade_parcelas}}</p>
+      <p>{{sugestao.valor_parcela}}</p> 
+      <p>{{sugestao.valor_total}}</p>
+      <p><a class="button button-feijor button-inside-app" ng-class="{'button-blue': sugestao.status.toUpperCase() == 'E','button-green': sugestao.status.toUpperCase() == 'A','button-red': sugestao.status.toUpperCase() == 'N'}">{{sugestao.status.toUpperCase() == 'E' ? 'EM ANÁLISE' : (sugestao.status.toUpperCase() == 'A' ? 'AUTORIZADO' : 'NEGADO')}}</a></p>
+      <p>{{sugestao.descricao}}</p>
+     </div>
+
+     <p class="title" ng-show="auxilios.length < 1">Você não tem nenhum auxílio solicitado ainda.</p>
+
+  </ion-content>
+</ion-view>

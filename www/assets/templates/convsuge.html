@@ -1,0 +1,20 @@
+<ion-view view-title="<img class='icomenu' src='assets/img/icon.png'>Convênios Sugeridos">
+  <ion-content>
+
+    <div class="card card-ausolic" ng-repeat="sugestao in sugestoes">
+      <p class="title">{{sugestao.nome_convenio}}</p>
+      <div class="row line">
+        <p class="col-70 col">{{sugestao.telefone_convenio}}</p>
+        <p class="col-30 col" ng-class="{'txt-blue': sugestao.situacao == 'E','txt-green': sugestao.situacao == 'A','txt-red': sugestao.situacao == 'N'}">{{sugestao.situacao == 'E' ? 'EM AVALIAÇÃO' : (sugestao.situacao == 'A' ? 'AUTORIZADO' : 'NEGADO')}}</p>
+      </div>
+      <p>{{sugestao.nome_cidade}}</p>
+      <p>{{sugestao.data_sugestao}}</p>
+
+      <p><b>Descrição</b></p>
+      <p>{{sugestao.descricao}}</p>
+     </div>
+
+     <p class="title" ng-show="sugestoes.length < 1">Você não tem nenhuma sugestão de convênio ainda.</p>
+
+  </ion-content>
+</ion-view>

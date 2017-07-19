@@ -1,0 +1,39 @@
+<ion-view view-title="<img class='icomenu' src='assets/img/icon.png'>Meus Dependentes">
+  <ion-content class="meusdependentes" ng-controller="homeCtrl">
+
+    <p class="title">Consulte seus dependentes cadastrados na ABEPOM</p>
+
+    <div class="card" ng-repeat="dependente in dependentes">
+      <div class="row">
+        <div class="col col-20">
+          <img class="avatar-feijor avatar-small" src="{{dependente.caminho_imagem}}">
+        </div>
+        <div class="col">
+          <p class="nome">{{dependente.nome_dependente}}</p>
+          <p class="dtnasc">Data Nasc.: {{dependente.aniversario}}</p>
+          <p class="grau">{{dependente.tipo_dependencia}}</p>
+        </div>
+        <div class="col col-10 col-img">
+          <img src="assets/img/icon-status-depndt/cadeado.png" ng-show="{{dependente.cartao_recebido}}" ng-click="sendLocation('/app/liberardependente/'+dependente.dependente)">
+          <img src="assets/img/icon-status-depndt/passo1.png" ng-show="{{dependente.cartao_solicitado}}">
+          <img src="assets/img/icon-status-depndt/passo2.png" ng-show="{{dependente.cartao_enviado && !dependente.cartao_recebido}}">
+          <img src="assets/img/icon-status-depndt/passo3.png" ng-click="liberaDp(dependente.cartao)" ng-show="{{dependente.cartao_enviado && !dependente.cartao_recebido}}">
+          <img src="assets/img/icon-status-depndt/passo4.png" ng-show="{{dependente.cartao_recebido}}">
+        </div>
+      </div>
+    </div>
+
+    <p class="title">Legendas das Situações do Cartão</p>
+    <img width="95%" style="margin:0px 2.5%;" src="assets/img/icon-status-depndt/legenda.png">
+
+    <p class="txt txt_add_rmv"><img style="width: 25px;margin-right: 5px;height: 25px;" src="assets/img/icon-status-depndt/cadeado.png"><a>Liberar Convênio ao Dependente</a></p>
+    <p class="txt">{{text8}}</p>
+
+    <p class="txt txt_add_rmv"><i class="icon-abepm">8</i>Como adicionar dependentes</p>
+    <p class="txt">{{text6}}</p>
+
+    <p class="txt txt_add_rmv"><i class="icon-abepm">8</i>Como excluir dependentes</p>
+    <p class="txt">{{text7}}</p>
+
+  </ion-content>
+</ion-view>

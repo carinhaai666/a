@@ -1,0 +1,63 @@
+<ion-view view-title="<img class='icomenu' src='assets/img/icon.png'>Solicitar Auxílio">
+  <ion-content class="soliaux" ng-controller="soliauxCtrl">
+
+    <div class="list">
+      <label class="item item-input item-stacked-label">
+        <span class="input-label">Preencha o estabelecimento</span>
+        <input type="text" ng-model="inputSolAux.nome">
+      </label>
+      <label class="item item-input item-stacked-label">
+        <span class="input-label">Telefone</span>
+        <input type="tel" ng-model="inputSolAux.telefone" ui-br-phone-number autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+      </label>
+      <label class="item item-input item-stacked-label">
+        <span class="input-label">Endereço</span>
+        <input type="text" ng-model="inputSolAux.endereco_convenio">
+      </label>
+      <label class="item item-input item-stacked-label">
+        <span class="input-label">Numero</span>
+        <input type="text" ng-model="inputSolAux.numero_convenio">
+      </label>
+      <label class="item item-input item-stacked-label">
+        <span class="input-label">Bairro</span>
+        <input type="text" ng-model="inputSolAux.bairro_convenio">
+      </label>
+      <label class="item item-input item-select">
+        <span class="input-label">Cidade</span>
+        <select ng-model="inputSolAux.codigo_cidade">
+          <option value="" selected disabled>Selecione uma cidade</option>
+          <option value="{{cidade.codigo_cidade}}" ng-repeat="cidade in cidades">{{cidade.nome_cidade}}</option>
+        </select>
+      </label>
+
+      <div class="inpradius row">
+        <div class="col col-10"></div>
+        <div class="col-80 row">
+          <div class="col col-10"><i class="icon ion-social-usd" style="vertical-align: -webkit-baseline-middle;"></i></div>
+          <div class="col"><input type="tel" ng-model="inputSolAux.valor_total" placeholder="Informe o valor do orçamento"></div>
+        </div>
+        <div class="col col-10"></div>
+      </div>
+
+      <button class="button button-feijor button-inside-app button-green" ng-click="simulaParc()">Simular parcelamento</button>
+
+      <br>
+      <br>
+      <br>
+
+      <div class="combparc">
+        <select ng-model="inputSolAuxParc.parcelas" class="slcPar">
+          <option value="" selected disabled>Selecione uma parcela</option>
+          <option value="{{nparcela}}" ng-repeat="nparcela in nparcelas">{{nparcela.numero_parcelas}} x {{nparcela.valor_parcela}}</option>
+        </select>
+      </div>
+
+      <br>
+      <br>
+
+      <button class="button button-feijor button-inside-app button-green" ng-click="confirmaStep1()">PRÓXIMO PASSO</button>
+      <p style="text-align:center;">1/2</p>
+    </div>
+
+  </ion-content>
+</ion-view>

@@ -1,0 +1,824 @@
+$blue: #1f4ba4;
+$green: #008f46;
+$gray: #bababa;
+$lightgray: #fafafa;
+$red: #d33131;
+$redButton: #be0411;
+$yellow: #dbcf15;
+
+a{
+  text-decoration: none;
+}
+
+p{
+  font-family: 'Montserrat', sans-serif !important;
+  font-weight: 400 !important;
+  font-size: 13px;
+}
+
+.bar-blue, .bar-header, .bar-header .button-icon {
+  color: white !important;
+  background: $blue !important;
+}
+
+.side-menu{
+  .bar-stable{
+    background-color: #f8f8f8 !important;
+    color: $blue !important;
+  }
+  .list .item{
+    font-size: 14px;
+    border: 0px solid transparent !important;
+    background-color: #f8f8f8 !important;
+    a{
+      background-color: #f8f8f8 !important;
+    }
+    i{
+      font-size: 14px;
+    }
+  }
+  .item-accordion a{
+    height: 25px !important;
+    padding: 0px 0px 0px 25% !important;
+  }
+
+}
+
+.item-complex.item-icon-right .item-content {
+  padding-right: 40px !important;
+}
+
+.item-complex.item-icon-left .item-content {
+  padding-left: 55px !important;
+}
+
+.toggleMenu {
+  padding-right: 40px !important;
+  padding-left: 55px !important;
+}
+
+ion-content{
+  .title{
+    color: #1f4ba4;
+    text-align: center;
+    font-weight: bolder;
+    font-size: 16px;
+    margin: 45px 0px 0px 0px;
+  }
+  .subtitle{
+    text-align: center;
+    color: #238023;
+    font-weight: 300;
+  }
+}
+
+ion-content{
+  .txt_block{
+    margin-bottom: 10px !important;
+    i{
+      color: $green;
+    }
+  }
+  .txt_add_rmv{
+    color: $blue;
+    margin-right: 3px;
+  }
+  .txt{
+    margin-top: 20px !important;
+    margin-bottom: 0px;
+    padding: 0px 2.5%;
+    font-weight: 300 !important;
+    i{
+      font-size: 20px;
+      line-height: 0px;
+      vertical-align: sub;
+    }
+  }
+}
+
+.icon.icon-abepm
+{
+  font-size: 25px !important;
+  //margin-top: 10px;
+}
+
+.imgUser{
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 100%;
+}
+
+.icomenu{
+  height: 16px;
+  margin-right: 10px;
+}
+
+.avatar-feijor{
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 100%;
+}
+
+.avatar-small{
+  width: 50px !important;
+  height: 50px !important;
+}
+
+.button-feijor{
+  width: 80%;
+  height: 20px;
+  min-height: 45px !important;
+  margin: 0px 10% !important;
+  border-radius: 5px;
+  color: white !important;
+  font-family: 'Montserrat', sans-serif !important;
+  font-weight: 400 !important;
+  font-size: 13px !important;
+  i{
+    font-size: 20px !important;
+    vertical-align: bottom;
+    padding-right: 10px;
+  }
+}
+
+.button-row{
+  width: 100% !important;
+  margin: 0px !important;
+  line-height: 10px !important;
+  font-size: 11px !important;
+  padding: 0px !important;
+  i{
+    vertical-align: bottom;
+    font-size: 18px !important;
+  }
+}
+
+.form-feijor{
+  select{
+    border: 1px solid #b1b1b1;
+    background-color: white;
+    border-radius: 25px;
+    padding: 3px 10px;
+    text-align-last:center;
+    color: #b1b1b1;
+  }
+}
+
+.space-row{
+  margin: 0px 5px;
+}
+
+.button-blue{
+  background-color: $blue !important;
+}
+
+.button-red{
+  background-color: $redButton !important;
+}
+
+.button-green{
+  background-color: $green !important;
+}
+
+.button-yellow{
+  background-color: $yellow !important;
+}
+
+.button-inside-app{
+  border-radius: 25px !important;
+  font-size: 11px !important;
+}
+
+.small-btn{
+  font-size: 12px !important;
+  height: 20px !important;
+  min-height: 40px !important;
+  width: 60% !important;
+  margin: 0px 20% !important;
+}
+
+.input input{
+  width: 80%;
+  height: 50px;
+  margin: 5px 10%;
+  padding-left: 5px !important;
+  border-radius: 5px;
+  border: 1px solid gray;
+}
+
+.login{
+  background-image: url(../img/background.png);
+  background-size: cover;
+  background-position-y: bottom;
+  .logo{
+    width: 40%;
+    margin: 20% 30% 15% 30%;
+  }
+  .iconsfooter{
+    width: 60%;
+    margin: 20% 15% 15% 15%;
+  }
+  .txtforgot_password{
+    width: 100%;
+    margin: 5% 0px;
+    padding-right: 10%;
+    text-align: right;
+    a{
+      color: white;
+    }
+  }
+}
+
+.forgot{
+  background-image: url(../img/background.png);
+  background-size: cover;
+  h3, h5{
+    text-align: center;
+    color: white;
+  }
+  h3{
+    padding-top: 20%;
+  }
+  h5{
+    margin-bottom: 20%;
+  }
+  .button{
+    margin-top: 10% !important;
+  }
+}
+
+.homeapp{
+  .header-user{
+    widows: 80% !important;
+    margin-top: 20px;
+    p{
+      margin: 0px;
+    }
+    .infocard{
+      color: gray;
+      font-size: 11px;
+      i{
+        font-size: 15px !important;
+        vertical-align: bottom;
+        margin-right: 5px;
+        color: $blue !important;
+      }
+    }
+  }
+  .totalizador{
+    widows: 80% !important;
+    box-sizing: border-box;
+    .left{
+      border-top-left-radius: 35px;
+      border-bottom-left-radius: 35px;
+    }
+    .right{
+      border-top-right-radius: 35px;
+      border-bottom-right-radius: 35px;
+    }
+    .element{
+      border: 1px solid #bfbfbf !important;
+      text-align: center;
+      padding-top: 8px;
+      padding-bottom: 8px;
+      .valor{
+        color: $blue;
+        font-size: 20px;
+        margin: 0px;
+      }
+      .txt{
+        color: gray;
+        font-size: 11px;
+        margin: 5px 0px 0px 0px !important;
+        line-height: 12px;
+      }
+    }
+  }
+  .footer-buttons{
+    .box{
+      text-align: center;
+      border: 1px solid $blue;
+      border-radius: 10px;
+      width: 90%;
+      height: 95px;
+      margin: 5px 2.5%;
+      padding-top: 15px;
+      i{
+        font-size: 35px !important;
+        color: $green;
+      }
+      .txt{
+        font-size: 11px !important;
+        line-height: 11px;
+        color: $blue;
+        margin-top: 8px !important;
+        a{
+          color: $blue;
+        }
+      }
+    }
+  }
+}
+
+.textInf{
+  text-align: justify;
+  font-family: 'Montserrat', sans-serif !important;
+  font-weight: 400 !important;
+  font-size: 13px !important;
+  padding: 15px 5%;
+}
+
+.liberaconvenio{
+  .title{
+    color: #1f4ba4;
+    text-align: center;
+    font-weight: bolder !important;
+    font-size: 16px;
+    margin: 45px 0px 0px 0px;
+  }
+  .subtitle{
+    text-align: center;
+    color: #238023;
+    font-weight: 300 !important;
+  }
+  .form-feijor{
+    margin: 40% 0px;
+    text-align: center;
+  }
+}
+
+.liberaconveniodependente{
+  .cabecalho{
+    text-align: center;
+  }
+  .row{
+    width: 95%;
+    margin: 10px 2.5%;
+  }
+  .row-cabecalho{
+    font-size: 11px;
+    font-weight: bolder;
+    text-align: left;
+    margin-bottom: 0px !important;
+  }
+  .row-body{
+    border-bottom: 1px solid #bababa;
+    color: $gray;
+  }
+  .row-footer{
+    margin-bottom: 40px;
+  }
+  .permitir{
+    border: 0px solid transparent;
+    padding-right: 25px;
+    padding-left: 25px;
+    .checkbox input:checked+.checkbox-icon:before, .checkbox input:checked:before{
+      background: $green;
+      border-color: $green;
+    }
+  }
+  .negar{
+    border: 0px solid transparent;
+    padding-right: 25px;
+    padding-left: 25px;
+    .checkbox input:checked+.checkbox-icon:before, .checkbox input:checked:before{
+      background: $red;
+      border-color: $red;
+    }
+  }
+}
+
+.meusdependentes{
+  .title{
+    font-size: 13px;
+    color: $blue;
+    text-align: center;
+    margin-top: 20px;
+  }
+  .card{
+    background-color: #f9f9f9;
+    .nome{
+      color: $blue;
+      margin-bottom: 0px;
+    }
+    .dtnasc{
+      font-size: 12px;
+      color: gray;
+    }
+    .grau{
+      margin-bottom: 0px;
+      color: gray;
+    }
+    .col-img img{
+      width: 25px;
+    }
+  }
+}
+
+.notifications{
+  .item-note{
+    text-align: right;
+    font-size: 10px;
+  }
+  .item{
+    text-overflow: ellipsis;
+    white-space: inherit;
+    font-family: 'Montserrat', sans-serif !important;
+    font-weight: 300 !important;
+    font-size: 12px;
+  }
+  .green{
+    color: $green;
+  }
+  .yellow{
+    color: $yellow;
+  }
+  .red{
+    color: $red;
+  }
+}
+
+.descFuturo{
+  .title{
+    font-weight: 300 !important;
+    text-align: center;
+    font-size: 12px !important;
+    color: $gray;
+    margin: 25px 5%;
+  }
+}
+
+.sugerirconvenios{
+  .title{
+    margin: 25px 0px 0px 0px;
+    text-align: center;
+    color: $blue;
+  }
+  .subtitle{
+    margin: 0px 0px 25px 0px;
+    text-align: center;
+    color: $green;
+  }
+  .item-stacked-label .icon, .item-stacked-label .input-label{
+    font-size: 12px;
+  }
+  .input-label{
+    text-transform: uppercase;
+    font-weight: bolder;
+    font-size: 10px;
+  }
+}
+
+.descepecial{
+  .title{
+    text-align: center;
+    font-size: 15px !important;
+    color: $gray;
+    margin: 20px 0px 0px 0px;
+  }
+  .subtitle{
+    text-align: center;
+    font-size: 13px !important;
+    color: $blue;
+  }
+  .iconSl{
+    img{
+      width: 40px;
+    }
+    b{
+      font-size: 7px;
+      color: black;
+    }
+  }
+  .activeted{
+    img{
+      border: 2px solid $green;
+      border-radius: 100%;
+    }
+  }
+
+}
+
+.mDesc{
+  .title{
+    color: $blue;
+    text-align: center;
+    font-weight: bolder !important;
+    font-size: 16px;
+    margin: 35px 0px 0px 0px;
+  }
+  .subtitle{
+    text-align: center;
+    color: $green;
+    font-weight: 300 !important;
+  }
+  .button-feijor{
+    .icon-abepm{
+    //  vertical-align: -webkit-baseline-middle !important;
+    }
+  }
+  .img-footer{
+    width: 95%;
+    border-radius: 5px;
+    margin: 0px 2.5%;
+  }
+}
+
+.row-abepom{
+  width: 95%;
+  margin: 10px 2.5%;
+  .valor{
+    text-align: right !important;
+  }
+  .col-cente{
+    text-align: center;
+  }
+  .row-cabecalho{
+    padding: 0px;
+    background-color: $green;
+    color: white;
+    p{
+      width: 100%;
+      text-align: center !important;
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+  }
+  .row-cabecalho-divider{
+    padding: 0px;
+    background-color: $green;
+    color: white;
+    margin: 0px;
+    p{
+      width: 100%;
+      text-align: center !important;
+      margin: 0px;
+    }
+  }
+  .row-subintocabecalho{
+    padding: 0px;
+    color: $green;
+    font-size: 11px !important;
+    .col{
+      background-color: $lightgray;
+      border: 1px solid #e2e2e2;
+      p{
+        margin: 0px;
+      }
+    }
+  }
+  .row-subcabecalho{
+    padding: 0px;
+    color: $blue;
+    font-size: 11px !important;
+    .col{
+      background-color: $lightgray;
+      border: 1px solid #e2e2e2;
+      p{
+        margin: 0px;
+      }
+    }
+    .with-line a{
+      color: #bebebe !important;
+    }
+  }
+  .row-body{
+    padding: 0px;
+    color: #bebebe;
+    font-size: 11px !important;
+    .col{
+      background-color: $lightgray;
+      border: 1px solid #e2e2e2;
+      p{
+        margin: 0px;
+        font-size: 11px;
+      }
+    }
+    .with-icon{
+      p{
+        text-align: center;
+        i{
+          color: $green;
+          font-size: 40px;
+        }
+      }
+    }
+  }
+  .row-footer{
+    background-color: $green;
+    color: white;
+    margin-bottom: 20px;
+    p{
+      width: 100%;
+      text-align: right;
+      margin: 0px;
+      padding-top: 15px;
+      padding-right: 5px;
+    }
+  }
+}
+
+.ifnot::after {
+    border-radius: 100%;
+    background-color: red;
+    width: 10px;
+    height: 10px;
+    margin-top: 25px !important;
+    font-size: 12px;
+    margin-left: 35px;
+}
+
+.config{
+  .title{
+    color: $green;
+    font-weight: bolder !important;
+    font-size: 12px;
+    text-align: left;
+    padding-left: 9%;
+  }
+  .item-stacked-label .icon, .item-stacked-label .input-label {
+    font-size: 12px;
+    font-weight: bolder;
+  }
+  .item-stacked-label{
+    margin: 0px 5%;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    padding: 0px 0px 0px 15px;
+  }
+}
+
+.card-solic{
+  background-color: $lightgray !important;
+  .title{
+    color: #1f4ba4;
+    text-align: center;
+    font-weight: bolder !important;
+    font-size: 18px;
+    margin: 15px 0px 0px 0px;
+  }
+  p{
+    text-align: center;
+    margin-bottom: 5px;
+  }
+}
+
+.card-ausolic{
+  background-color: $lightgray !important;
+  padding: 10px !important;
+  .col-30{
+    text-align: right;
+    padding-right: 5px;
+  }
+  .title{
+    color: #1f4ba4;
+    text-align: left;
+    font-weight: bolder !important;
+    font-size: 17px;
+  }
+  .txt-green{
+    color: $green !important;
+  }
+  .txt-blue{
+    color: $blue !important;
+  }
+  .txt-red{
+    color: $red !important;
+  }
+  p, .line{
+    text-align: left;
+    padding: 0px;
+    margin: 0px;
+    font-size: 13px;
+    line-height: 18px;
+  }
+}
+
+input.ng-dirty{
+  .ng-invalid {
+    background-color: #ff8a8a;
+  }
+  .ng-fix {
+    background-color: white !important;
+  }
+}
+
+.txt-no-row{
+  text-align: center;
+}
+
+.avaliaconv{
+  .name{
+    text-align: center;
+    color: $blue;
+    font-weight: bolder !important;
+    font-size: 18px;
+  }
+  .rating{
+    text-align: center;
+    color: #caca12;
+  }
+  .input-label{
+    font-size: 13px;
+    font-weight: bolder;
+  }
+}
+
+.verconvenio{
+  .name{
+    text-align: center;
+    color: $blue;
+    font-weight: bolder !important;
+    font-size: 18px;
+  }
+  .rating{
+    text-align: center;
+    color: #caca12;
+  }
+  .input-label{
+    font-size: 13px;
+    font-weight: bolder;
+  }
+  .bloco{
+    border-bottom: 1px solid #a7a7a7;
+    margin: 0px 5% 15px 5%;
+    .blue{
+      color: $blue !important;
+    }
+    .mintitle{
+      color: #a7a7a7 !important;
+      margin-bottom: 15px;
+      font-size: 12px;
+      font-weight: bolder !important;
+      text-transform: uppercase;
+    }
+    .minsub{
+      font-size: 12px;
+      margin: 0px;
+    }
+    .mindiv{
+      border-bottom: 1px solid #a7a7a7;
+    }
+  }
+}
+
+.iw_container{
+  .iw_title{
+    color: $blue !important;
+    font-size: 18px;
+    font-weight: bolder;
+  }
+  .iw_area{
+    color: $green !important;
+    font-size: 10px;
+  }
+  .iw_itens{
+    color: #4a4a4a !important;
+  }
+}
+
+.soliaux{
+  .inpradius{
+    input{
+      border: 1px solid #484848;
+      border-radius: 25px;
+      width: 100%;
+      padding-left: 10px;
+      text-align: center;
+    }
+    .ion-social-usd{
+      color: $blue !important;
+      font-size: 20px;
+    }
+  }
+}
+
+.combparc{
+  text-align: center;
+  .slcPar{
+    text-align: center;
+    border: 1px solid #484848;
+    border-radius: 25px;
+    padding: 1% 5%;
+  }
+}
+
+.ico-share{
+  color: $green !important;
+  padding: 0px 5px 0px 5px;
+}
+
+.listarea{
+  font-size: 12px !important;
+}
+
+.listarea::before{
+  content: " ";
+  border-radius: 100%;
+  border: 3px solid #1f4ba4;
+  padding: 1px 9px;
+  margin: 0px 10px;
+}

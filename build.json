@@ -1,0 +1,18 @@
+{
+    "android": {
+        "debug": {
+            "keystore": "abepom.keystore",
+            "storePassword": "unlock88",
+            "alias": "devfeijor",
+            "password" : "unlock88",
+            "keystoreType": ""
+        },
+        "release": {
+            "keystore": "abepom.keystore",
+            "storePassword": "unlock88",
+            "alias": "devfeijor",
+            "password" : "unlock88",
+            "keystoreType": ""
+        }
+    }
+}

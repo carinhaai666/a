@@ -1,0 +1,32 @@
+<ion-view view-title="">
+  <ion-content class="login" ng-controller="loginCtrl">
+
+    <img src="assets/img/logo.png" class="logo">
+
+    <form name="formLogin" ng-submit="login()">
+      <div class="input">
+        <input type="tel" name="cartao" ng-model="inpLogin.cartao" placeholder="Cartão ABEPOM" maxlength="11" class="ng-fix" required>
+      </div>
+      <div class="input">
+        <input type="password" name="senha" ng-model="inpLogin.senha" placeholder="Senha" required>
+      </div>
+
+      <p class="txtforgot_password"><a ng-href="#/nLog/forgot">Esqueceu sua senha?</a></p>
+
+
+      <input type="submit" id="submit" value="Entrar" class="button button-feijor button-blue" />
+    </form>
+
+    <footer>
+      <div class="row">
+        <div class="col col-50">
+          <img src="assets\img\logo1.png" class="iconsfooter">
+        </div>
+        <div class="col col-50">
+          <img src="assets\img\logo2.png" class="iconsfooter">
+        </div>
+      </div>
+    </footer>
+
+  </ion-content>
+</ion-view>

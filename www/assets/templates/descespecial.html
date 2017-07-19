@@ -1,0 +1,269 @@
+<ion-view view-title="<img class='icomenu' src='assets/img/icon.png'>Descontos Específicos">
+  <ion-content class="descepecial" ng-controller="descepecifico">
+
+    <p class="title">Confira os seus descontos por área.</p>
+    <p class="subtitle">selecione:</p>
+    <div class="row" style="text-align: center;">
+      <div class="col iconSl" ng-class="{'activeted' : 'participacao' == itemshow}">
+        <a ng-click="activediv('participacao')"><img src="assets/img/ion-btn-desc-espe/icon1.png"><b>Coparticip.</b></a>
+      </div>
+      <div class="col iconSl" ng-class="{'activeted' : 'hospitalar' == itemshow}">
+        <a ng-click="activediv('hospitalar')"><img src="assets/img/ion-btn-desc-espe/icon2.png"><b>Hospitalar</b></a>
+      </div>
+      <div class="col iconSl" ng-class="{'activeted' : 'farmacia' == itemshow}">
+        <a ng-click="activediv('farmacia')"><img src="assets/img/ion-btn-desc-espe/icon3.png"><b>Farmácia</b></a>
+      </div>
+      <div class="col iconSl" ng-class="{'activeted' : 'odontologia' == itemshow}">
+        <a ng-click="activediv('odontologia')"><img src="assets/img/ion-btn-desc-espe/icon4.png"><b>Odontologia</b></a>
+      </div>
+      <div class="col iconSl" ng-class="{'activeted' : 'radiologia' == itemshow}">
+        <a ng-click="activediv('radiologia')"><img src="assets/img/ion-btn-desc-espe/icon5.png"><b>Radiologia</b></a>
+      </div>
+      <div class="col iconSl" ng-class="{'activeted' : 'emprestimo' == itemshow}">
+        <a ng-click="activediv('emprestimo')"><img src="assets/img/ion-btn-desc-espe/icon6.png"><b>Empréstimo</b></a>
+      </div>
+    </div>
+
+    <form class="form-feijor row">
+        <select class="col space-row" ng-change="mudasldesc()" ng-model="inputdesesp.mes">
+          <option value="" selected disabled>Selecione o mês</option>
+          <option value="01">Janeiro</option>
+          <option value="02">Fevereiro</option>
+          <option value="03">Março</option>
+          <option value="04">Abril</option>
+          <option value="05">Maio</option>
+          <option value="06">Junho</option>
+          <option value="07">Julho</option>
+          <option value="08">Agosto</option>
+          <option value="09">Setembro</option>
+          <option value="10">Outubro</option>
+          <option value="11">Novembro</option>
+          <option value="12">Dezembro</option>
+        </select>
+        <select class="col space-row" ng-change="mudasldesc()" ng-model="inputdesesp.ano">
+            <option value="" selected disabled>Selecione o ano</option>
+            <option value="{{ano}}" ng-repeat="ano in anos">{{ano}}</option>
+        </select>
+    </form>
+
+    <div ng-show="'participacao' == itemshow">
+
+      <div class="row-abepom" ng-show="liberatabela">
+        <div class="row row-cabecalho">
+          <p>{{meses[inputdesesp.mes]}} de {{inputdesesp.ano}}</p>
+        </div>
+        <div ng-repeat="partici in participacao.descontos">
+          <div class="row row-subcabecalho">
+            <div class="col with-line"><p>Mês do 1º desc.:<a>{{partici.mesano_primeiro_desconto}}</a></p></div>
+            <div class="col with-line"><p>Parc.:<a>{{partici.parcelamento}}</a></p></div>
+            <div class="col with-line"><p>Total:<a>R${{partici.valor_total | number: 2}}</a></p></div>
+          </div>
+          <div class="row row-subcabecalho">
+            <div class="col with-line"><p>Benificiário:<a>{{partici.nome_beneficiario}}</a></p></div>
+            <div class="col with-line"><p>Plano nº:<a>{{partici.numero_plano}}</a></p></div>
+          </div>
+          <div class="row row-subcabecalho">
+            <div class="col"><p>Dt. de Utilização</p></div>
+            <div class="col col-70"><p>Prestador</p></div>
+          </div>
+          <div class="row row-body">
+            <div class="col"><p>{{partici.data_utilizacao}}</p></div>
+            <div class="col col-70"><p>{{partici.nome_prestador}}</p></div>
+          </div>
+          <div class="row row-subcabecalho" ng-show="false">
+            <div class="col"><p>Decrição</p></div>
+          </div>
+        </div>
+        <div ng-repeat="procedimento in participacao.procedimentos">
+          <div class="row row-subcabecalho">
+            <div class="col with-line"><p>Dt. Utilização:<a>{{procedimento.data_utilizacao}}</a></p></div>
+            <div class="col with-line"><p>Nome prestador:<a>{{procedimento.nome_prestador}}</a></p></div>
+            <div class="col with-line"><p>Total:<a>R${{procedimento.valor | number: 2}}</a></p></div>
+          </div>
+          <div class="row row-subcabecalho">
+            <div class="col with-line"><p>Descrição:<a>{{procedimento.descricao}}</a></p></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div ng-show="'hospitalar' == itemshow">
+
+      <div class="row-abepom" ng-show="liberatabela">
+        <div class="row row-cabecalho">
+          <p>{{meses[inputdesesp.mes]}} de {{inputdesesp.ano}}</p>
+        </div>
+        <div>
+          <div class="row row-subcabecalho">
+            <div class="col col-40"><p>Nome</p></div>
+            <div class="col col-20"><p>Valor</p></div>
+            <div class="col col-20"><p>Data</p></div>
+            <div class="col col-2"><p>Detalhes</p></div>
+          </div>
+          <div class="row row-body" ng-repeat="partici in hospitalar.descontos">
+            <div class="col col-40"><p>{{partici.nome}}</p></div>
+            <div class="col col-20"><p>R$ {{partici.valor | number: 2}}</p></div>
+            <div class="col col-20"><p>{{partici.data}}</p></div>
+            <div class="col with-icon" ng-click="sendLocation('/app/dthosp/'+partici.numero_lancamento)"><p><i class="icon ion-ios-eye-outline" style="font-size: 40px"></i></p></div>
+          </div>
+        </div>
+        <div class="row row-footer">
+          <p>Total de descontos do mês: R${{hospitalar.descontos | sumOfValue:'valor' | number: 2}}</p>
+        </div>
+      </div>
+
+      <div class="row-abepom" ng-show="liberatabela">
+        <div class="row row-cabecalho">
+          <p>Parcelamento</p>
+        </div>
+        <div>
+          <div class="row row-body">
+            <div class="col"style="max-width: 80px;"><ion-checkbox ng-model="inpparcelarhosp.confirma" class="permitir" style="background-color: transparent;border-color: transparent;"></ion-checkbox></div>
+            <div class="col">Estou ciente que o parcelamento será de acordo com o que prevê o *plano de benefícios da ABEPOM</div>
+          </div>
+          <div class="row row-body">
+            <div class="col">
+              <div class="combparc">
+                <select ng-model="inpparcelarhosp.parcelas" class="slcPar">
+                  <option value="" selected disabled>Selecione uma parcela</option>
+                  <option ng-repeat="nparcela in nparcelas">{{nparcela.nome}}</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="row row-body">
+            <div class="col">
+              <button ng-show="liberatabela" class="button button-feijor button-inside-app button-blue" ng-click="parcelarhosp(inpparcelarhosp)">PARCELAR</button>
+            </div>
+          </div>
+        </div>
+
+        <br>
+        <button ng-show="liberatabela" class="button button-feijor button-inside-app button-green" ng-click="sendLocation('/app/beneficioseserv')">Visualizar Benefícios e Serviços</button>
+      </div>
+
+
+
+    </div>
+
+    <div ng-show="'farmacia' == itemshow">
+      <div class="row-abepom" ng-show="liberatabela">
+        <div class="row row-cabecalho">
+          <p>{{meses[inputdesesp.mes]}} de {{inputdesesp.ano}}</p>
+        </div>
+        <div class="row row-subcabecalho">
+          <div class="col col-25"><p>Nome</p></div>
+          <div class="col col-25"><p>Data</p></div>
+          <div class="col col-25"><p>Local</p></div>
+          <div class="col col-25"><p>Valor</p></div>
+        </div>
+        <div class="row row-body" ng-repeat="partici in farmacia.descontos">
+          <div class="col col-25"><p>{{partici.nome_paciente}}</p></div>
+          <div class="col col-25"><p>{{partici.data}}</p></div>
+          <div class="col col-25"><p>{{partici.nome_fantasia}}</p></div>
+          <div class="col col-25"><p>R${{partici.valor | number: 2}}</p></div>
+        </div>
+        <div class="row row-footer">
+          <p>Total de descontos do mês: R${{farmacia.descontos | sumOfValue:'valor' | number: 2}}</p>
+        </div>
+      </div>
+    </div>
+
+    <div ng-show="'odontologia' == itemshow">
+      <div class="row-abepom" ng-show="liberatabela">
+        <div class="row row-cabecalho">
+          <p>{{meses[inputdesesp.mes]}} de {{inputdesesp.ano}}</p>
+        </div>
+        <div class="row row-subcabecalho">
+          <div class="col"><p>Paciente</p></div>
+          <div class="col"><p>Data</p></div>
+          <div class="col"><p>Valor</p></div>
+          <div class="col"><p>Detalhes</p></div>
+        </div>
+        <div class="row row-body" ng-repeat="partici in odontologia.orcamentos">
+          <div class="col"><p>{{partici.nome_paciente}}</p></div>
+          <div class="col"><p>{{partici.data_execucao}}</p></div>
+          <div class="col"><p>R${{partici.valor | number: 2}}</p></div>
+          <div class="col with-icon" ng-click="sendLocation('/app/dtodont/'+partici.id_orcamento)"><p><i class="icon ion-ios-eye-outline" style="font-size: 40px"></i></p></div>
+        </div>
+        <div class="row row-footer">
+          <p>Total de descontos do mês: R${{odontologia.orcamentos | sumOfValue:'valor' | number: 2}}</p>
+        </div>
+      </div>
+    </div>
+
+    <div ng-show="'radiologia' == itemshow">
+
+      <div class="row-abepom" ng-show="liberatabela">
+        <div class="row row-cabecalho">
+          <p>{{meses[inputdesesp.mes]}} de {{inputdesesp.ano}}</p>
+        </div>
+        <div class="row row-subcabecalho">
+          <div class="col col-25"><p>Data</p></div>
+          <div class="col col-50"><p>Local</p></div>
+          <div class="col col-25"><p>Valor</p></div>
+        </div>
+        <div class="row row-body" ng-repeat="partici in radiologia.descontos">
+          <div class="col col-25"><p>{{partici.data}}</p></div>
+          <div class="col col-50"><p>{{partici.nome_fantasia}}</p></div>
+          <div class="col col-25"><p>R${{partici.valor | number: 2}}</p></div>
+        </div>
+        <div class="row row-footer">
+          <p>Valor total: R${{radiologia.descontos | sumOfValue:'valor' | number: 2}}</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div ng-show="'emprestimo' == itemshow">
+      <div class="row-abepom" ng-show="liberatabela">
+        <div class="row row-cabecalho">
+          <p>{{meses[inputdesesp.mes]}} de {{inputdesesp.ano}}</p>
+        </div>
+        <div class="row row-subintocabecalho">
+          <div class="col"><p>Emprestimos</p></div>
+        </div>
+        <div class="row row-subcabecalho">
+          <div class="col col-20"><p>Financeira</p></div>
+          <div class="col col-20"><p>Data de início</p></div>
+          <div class="col col-20"><p>Parcelas</p></div>
+          <div class="col col-20"><p>Valor</p></div>
+          <div class="col col-20"><p>Detalhes</p></div>
+        </div>
+        <div class="row row-body" ng-repeat="partici in emprestimo.emprestimos">
+          <div class="col col-20"><p>{{partici.nome_financeira}}</p></div>
+          <div class="col col-20"><p>{{partici.data_inicio}}</p></div>
+          <div class="col col-20"><p>{{partici.quantidade_parcelas}}</p></div>
+          <div class="col col-20"><p>R${{partici.valor | number: 2}}</p></div>
+          <div class="col with-icon" ng-click="sendLocation('/app/dtemprestimo/'+partici.codigo_controle+'/emprestimo')"><p><i class="icon ion-ios-eye-outline" style="font-size: 40px"></i></p></div>
+        </div>
+        <div class="row row-subintocabecalho">
+          <div class="col"><p>Auxílios</p></div>
+        </div>
+        <div class="row row-subcabecalho">
+          <div class="col col-20"><p>Financeira</p></div>
+          <div class="col col-20"><p>Data de início</p></div>
+          <div class="col col-20"><p>Parcelas</p></div>
+          <div class="col col-20"><p>Valor</p></div>
+          <div class="col col-20"><p>Detalhes</p></div>
+        </div>
+        <div class="row row-body" ng-repeat="partici in emprestimo.auxilios">
+          <div class="col col-20"><p>{{partici.nome_financeira}}</p></div>
+          <div class="col col-20"><p>{{partici.data_inicio}}</p></div>
+          <div class="col col-20"><p>{{partici.quantidade_parcelas}}</p></div>
+          <div class="col col-20"><p>R${{partici.valor | number: 2}}</p></div>
+          <div class="col with-icon" ng-click="sendLocation('/app/dtemprestimo/'+partici.codigo_controle+'/auxilio')"><p><i class="icon ion-ios-eye-outline" style="font-size: 40px"></i></p></div>
+        </div>
+      </div>
+    </div>
+
+
+    <p class="txt txt-no-row" ng-show="!liberamsg">Nenhum registro</p>
+
+    <p class="txt txt_add_rmv"><i class="icon-abepm">8</i>O que são os descontos Específicos?</p>
+    <div class="textInf">
+      <p ng-bind-html="texto"></p>
+    </div>
+  </ion-content>
+</ion-view>

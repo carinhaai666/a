@@ -1,0 +1,53 @@
+{
+    "name": "abepom",
+    "version": "0.0.1",
+    "description": "An Ionic project",
+    "dependencies": {
+        "call-number": "git+https://github.com/Rohfosho/CordovaCallNumberPlugin.git",
+        "cordova-plugin-call-number": "^1.0.1",
+        "cordova-plugin-camera": "^2.4.1",
+        "cordova-plugin-compat": "^1.1.0",
+        "cordova-plugin-crosswalk-webview": "^2.3.0",
+        "cordova-plugin-device": "^1.1.6",
+        "cordova-plugin-dialogs": "^1.3.3",
+        "cordova-plugin-geolocation": "^2.4.3",
+        "cordova-plugin-share": "file:///C:\\Users\\Feijor\\Desktop\\nl.madebymark.share",
+        "cordova-plugin-splashscreen": "^4.0.3",
+        "cordova-plugin-statusbar": "^2.2.3",
+        "cordova-plugin-whitelist": "^1.3.2",
+        "cordova-plugin-x-socialsharing": "^5.1.8",
+        "gulp": "^3.5.6",
+        "gulp-concat": "^2.2.0",
+        "gulp-minify-css": "^0.3.0",
+        "gulp-rename": "^1.2.0",
+        "gulp-sass": "^2.0.4",
+        "ionic-plugin-keyboard": "^2.2.1",
+        "phonegap-plugin-push": "^1.4.3"
+    },
+    "devDependencies": {
+        "@ionic/cli-plugin-cordova": "1.4.1",
+        "@ionic/cli-plugin-gulp": "1.0.2",
+        "@ionic/cli-plugin-ionic1": "2.0.1",
+        "bower": "^1.3.3",
+        "gulp-util": "^2.2.14",
+        "shelljs": "^0.3.0"
+    },
+    "cordova": {
+        "plugins": {
+            "ionic-plugin-keyboard": {},
+            "cordova-plugin-whitelist": {},
+            "cordova-plugin-statusbar": {},
+            "cordova-plugin-splashscreen": {},
+            "cordova-plugin-geolocation": {},
+            "cordova-plugin-dialogs": {},
+            "cordova-plugin-crosswalk-webview": {},
+            "cordova-plugin-compat": {},
+            "cordova-plugin-camera": {},
+            "cordova-plugin-device": {},
+            "cordova-plugin-call-number": {},
+            "cordova-plugin-x-socialsharing": {},
+            "phonegap-plugin-push": {}
+        },
+        "platforms": []
+    }
+}

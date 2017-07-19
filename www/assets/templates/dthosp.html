@@ -1,0 +1,32 @@
+<ion-view view-title="<img class='icomenu' src='assets/img/icon.png'>Detalhes Descontos Hospitalares">
+  <ion-content>
+
+    <div class="row-abepom">
+      <div class="row row-cabecalho">
+        <p>Detalhamento de desconto</p>
+      </div>
+      <div class="row row-subcabecalho">
+        <div class="col"><p>Convênio</p></div>
+      </div>
+      <div class="row row-body">
+        <div class="col"><p>{{convenio.nome_fantasia}}</p></div>
+      </div>
+      <div class="row row-subcabecalho">
+        <div class="col with-line"><p>Nome: <a>{{convenio.nome_paciente}}</a></p></div>
+        <div class="col with-line"><p>Data e Hora: <a>{{convenio.data}} - {{convenio.hora}}</a></p></div>
+      </div>
+      <div class="row row-subcabecalho">
+        <div class="col"><p>Precedimento</p></div>
+      </div>
+      <div class="row row-body">
+        <div class="col"><p>{{convenio.procedimento}}</p></div>
+      </div>
+      <div class="row row-subcabecalho">
+        <div class="col"><p>Valor</p></div>
+      </div>
+      <div class="row row-body">
+        <div class="col"><p>R$ {{convenio.valor | number: 2}}</p></div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

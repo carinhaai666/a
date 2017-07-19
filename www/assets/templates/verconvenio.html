@@ -1,0 +1,53 @@
+<ion-view view-title="<img class='icomenu' src='assets/img/icon.png'>Pesquisar Convênios">
+  <ion-content class="verconvenio">
+
+    <br>
+    <br>
+
+    <div>
+      <div>
+        <p class="name">{{arr.dados.nome}}<i ng-click="share(arr)" class="icon ion-android-share-alt ico-share"></i></p>
+        <p style="text-align: center;color: gray;">{{arr.dados.area}}</p>
+        <rating ng-model="vlrinp.rating" max="vlrinp.max" ng-disabled="true" ng-readonly="1"></rating>
+      </div>
+
+      <div class="bloco">
+        <p class="mintitle">Descrição</p>
+        <p ng-bind-html="arr.dados.observacao"></p>
+      </div>
+
+      <div class="bloco">
+        <p class="mintitle">Áreas de atuação</p>
+        <p ng-repeat="area in arr.areas">{{area.area}}</p>
+      </div>
+
+      <div class="bloco">
+        <p class="mintitle">Telefones</p>
+        <p ng-repeat="telefone in arr.telefones" ng-click="clicktocall(telefone.telefone)"><i class="icon ion-ios-telephone-outline" style="padding-right: 5px;"></i>{{telefone.telefone}}</p>
+      </div>
+
+      <div class="bloco">
+        <p class="mintitle">Endereço</p>
+        <div ng-repeat="endere in arr.endereco">
+          <p class="minsub">{{endere.endereco}},{{endere.numero}} - {{endere.nome_cidade}}</p>
+          <p class="minsub mindiv">{{endere.cep}} - {{endere.bairro}} - {{endere.complemento}}</p>
+        </div>
+      </div>
+
+      <div class="bloco">
+        <p class="mintitle" style="color: #1f4ba4 !important;">COMENTÁRIOS</p>
+        <div class="row" ng-repeat="comentario in arr.comentarios">
+          <div class="col col-25">
+            <img src="{{comentario.caminho_imagem}}" style="border-radius:100%;    width: 40px;height: 40px;">
+          </div>
+          <div class="col">
+            <p style="font-size: 13px;">{{comentario.nome}}</p>
+            <p style="font-size: 11 px;">{{comentario.comentario}}</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </ion-content>
+</ion-view>

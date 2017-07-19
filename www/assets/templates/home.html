@@ -1,0 +1,117 @@
+<ion-view view-title="<img class='icomenu' src='assets/img/icon.png'>ABEPOM Mobile">
+  <ion-content class="homeapp">
+
+    <div class="marginside10 header-user">
+      <div class="row" style="padding-left: 10%;">
+        <div class="col-20">
+          <img class="imgUser" ng-src="{{usimg}}">
+        </div>
+        <div class="col" style="padding-left: 5%;">
+          <p><b>{{usnome}}</b></p>
+          <p class="infocard"><i class="icon icon-abepm">7</i>Cartão ABEPOM: {{uscartao}}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="totalizador row" ng-show="usperfil == 'titular'">
+      <div class="col element left col-50">
+        <p class="valor"><small>R$</small>{{medicamentos_e_tratamentos | currency:""}}</p>
+        <p class="txt">Medicamentos e Tratamentos</p>
+      </div>
+      <div class="col element right col-50">
+        <p class="valor"><small>R$</small>{{hospitalar_e_aparelhos_medicos | currency:""}}</p>
+        <p class="txt">Hospitalar e Aparelhos Médicos</p>
+      </div>
+    </div>
+
+    <div ng-show="usperfil != 'titular'">
+      <br>
+      <br>
+      <br>
+    </div>
+
+    <div class="footer-buttons">
+      <div class="row">
+        <div class="col-33">
+          <div class="box" ng-click="sendLocation('/app/convenioprox')">
+            <i class="icon icon-abepm">b</i>
+            <p class="txt">Convênios Próximos</p>
+          </div>
+        </div>
+        <div class="col-33">
+          <div class="box" ng-click="sendLocation('/app/pesquisarconvenios')">
+            <i class="icon icon-abepm">a</i>
+            <p class="txt">Pesquisar Convênios</p>
+          </div>
+        </div>
+        <div class="col-33" ng-show="usperfil == 'titular'">
+          <div class="box" ng-click="sendLocation('/app/sugerirconvenios')">
+            <i class="icon icon-abepm">k</i>
+            <p class="txt">Sugerir Convênios</p>
+          </div>
+        </div>
+        <div class="col-33" ng-show="usperfil != 'titular'">
+          <div class="box" ng-click="sendLocation('/app/cdescontos')">
+            <i class="icon icon-abepm">s</i>
+            <p class="txt">Minhas Despesas</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-33" ng-show="usperfil == 'titular'">
+          <div class="box" ng-click="sendLocation('/app/cdescontos')">
+            <i class="icon icon-abepm">s</i>
+            <p class="txt">Consultar Descontos</p>
+          </div>
+        </div>
+        <div class="col-33" ng-show="usperfil == 'titular'">
+          <div class="box" ng-click="sendLocation('/app/descespecial')">
+            <i class="icon icon-abepm">r</i>
+            <p class="txt">Descontos Específicos</p>
+          </div>
+        </div>
+        <div class="col-33" ng-show="usperfil == 'titular'">
+          <div class="box" ng-click="sendLocation('/app/descontofuturo')">
+            <i class="icon icon-abepm">3</i>
+            <p class="txt">Descontos Futuros</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-33" ng-show="usperfil == 'titular'">
+          <div class="box" ng-click="sendLocation('/app/meusdependentes')">
+            <i class="icon icon-abepm">n</i>
+            <p class="txt">Meus Dependentes</p>
+          </div>
+        </div>
+        <div class="col-33" ng-show="usperfil == 'titular'">
+          <div class="box" ng-click="sendLocation('/app/liberarconvenio')">
+            <i class="icon icon-abepm">p</i>
+            <p class="txt" style="font-size: 10px;">Liberar Convênio ao Dependente</p>
+          </div>
+        </div>
+
+        <div class="col col-15" ng-show="usperfil != 'titular'"></div>
+
+        <div class="col-33" ng-show="usperfil != 'titular'">
+          <div class="box" ng-click="sendLocation('/app/conssultconvenio')">
+            <i class="icon icon-abepm">p</i>
+            <p class="txt" style="font-size: 10px;">Convênios e permissões de Uso</p>
+          </div>
+        </div>
+        <div class="col-33">
+          <div class="box" ng-click="sendLocation('/app/card')">
+            <i class="icon icon-abepm">4</i>
+            <p class="txt">Cartão ABEPOM</p>
+          </div>
+        </div>
+
+        <div class="col col-15" ng-show="usperfil != 'titular'"></div>
+      </div>
+    </div>
+
+    <a ng-href="#/app/beneficioseserv" class="button button-feijor button-inside-app button-blue" ng-show="usperfil == 'titular'">Consulte seus Benefícios e Serviços</a>
+  </ion-content>
+</ion-view>

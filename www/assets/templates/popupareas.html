@@ -1,0 +1,16 @@
+<ion-modal-view>
+  <ion-header-bar align-title="center">
+        <h1 class="title" style="color: white !important;"><img class='icomenu' src='assets/img/icon.png'>ÁREA DE ATUAÇÃO</h1>
+
+        <div class="buttons buttons-right">
+            <button ng-click="closepopuparea('0000')" style="color: white !important;" class="button icon button-blue ion-close"></button>
+        </div>
+    </ion-header-bar>
+  <ion-content>
+
+    <br>
+    <p ng-click="closepopuparea('0000')" class="listarea">TODAS AS ÁREAS</p>
+    <p ng-click="closepopuparea(area.codigo_da_area)" class="listarea" ng-repeat="area in areas">{{area.descricao}}</p>
+
+  </ion-content>
+</ion-modal-view>

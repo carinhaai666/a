@@ -1,0 +1,61 @@
+<ion-view view-title="<img class='icomenu' src='assets/img/icon.png'>{{page_title}}">
+    <ion-content class="mDesc" ng-controller="cdescontoCtrl">
+      <p class="title">Informe o mês e o ano</p>
+      <p class="subtitle">para visualizar seus descontos.</p>
+
+      <form class="form-feijor row">
+          <select class="col space-row" ng-change="mudasldesc()" ng-model="inputdesc.mes">
+              <option value="" selected disabled>Selecione o mês</option>
+              <option value="1">Janeiro</option>
+              <option value="2">Fevereiro</option>
+              <option value="3">Março</option>
+              <option value="4">Abril</option>
+              <option value="5">Maio</option>
+              <option value="6">Junho</option>
+              <option value="7">Julho</option>
+              <option value="8">Agosto</option>
+              <option value="9">Setembro</option>
+              <option value="10">Outubro</option>
+              <option value="11">Novembro</option>
+              <option value="12">Dezembro</option>
+          </select>
+          <select class="col space-row" ng-change="mudasldesc()" ng-model="inputdesc.ano">
+              <option value="" selected disabled>Selecione o ano</option>
+              <option value="{{ano}}" ng-repeat="ano in anos">{{ano}}</option>
+          </select>
+      </form><br/>
+
+      <p class="txt txt-no-row" ng-show="!liberatabela">Nenhum registro</p>
+
+      <div class="row-abepom" ng-show="descontos.length > 0">
+        <div class="row row-cabecalho">
+          <p>{{meses[inputdesc.mes]}} de {{inputdesc.ano}}</p>
+        </div>
+        <div class="row row-subcabecalho">
+          <div class="col col-75">
+            <p>Descrição do desconto</p>
+          </div>
+          <div class="col col-25 valor">
+            <p>Valor</p>
+          </div>
+        </div>
+        <div class="row row-body" ng-repeat="desconto in descontos">
+            <div class="col col-75">
+                <p>{{desconto.nome_fantasia}}</p>
+            </div>
+            <div class="col col-25 valor">
+                <p>R${{desconto.valor | currency:"" | number:2}}</p>
+            </div>
+        </div>
+        <div class="row row-footer">
+          <p>Total de descontos do mês: R${{valorTotal | currency:"" | number:2}}</p>
+        </div>
+      </div>
+
+      <img class="img-footer" src="{{caminho_imagem}}">
+
+      <button ng-click="sendLocation('/app/descespecial')" class="button button-feijor button-inside-app button-red" ng-show="{{showdesc}}">
+        <i class="icon-abepm">s</i>Descontos Específicos
+      </button>
+    </ion-content>
+</ion-view>

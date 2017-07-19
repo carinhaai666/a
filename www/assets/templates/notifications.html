@@ -1,0 +1,26 @@
+<ion-modal-view>
+  <ion-header-bar align-title="center">
+        <h1 class="title" style="color: white !important;"><img class='icomenu' src='assets/img/icon.png'>Notificações</h1>
+
+        <div class="buttons buttons-right">
+            <button ng-click="fechanotifcation()" style="color: white !important;" class="button icon button-blue ion-close"></button>
+        </div>
+    </ion-header-bar>
+  <ion-content>
+
+    <div class="list notifications">
+
+      <p class="title" ng-show="!notificacoes">Nenhum item a ser exibido</p>
+
+      <a class="item item-icon-left" ng-repeat="notificacao in notificacoes" ng-click="lemsg(notificacao.id_notificacao)">
+        <i class="icon green ion-android-notifications-none" ng-class="{'green' : notificacao.tipo == 1,'yellow' : notificacao.tipo == 2,'red' : notificacao.tipo == 3}"></i>
+        {{notificacao.descricao}}
+        <span class="item-note">
+          {{notificacao.data_notificacao}}
+        </span>
+      </a>
+
+    </div>
+
+  </ion-content>
+</ion-modal-view>
